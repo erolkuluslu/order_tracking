@@ -1,0 +1,74 @@
+{
+  "orders": [
+    {
+      "id": "1",
+      "customerName": "Alice",
+      "foodName": "Salad",
+      "foodCount": 1,
+      "status": "Pending"
+    },
+    {
+      "id": "2",
+      "customerName": "Bob",
+      "foodName": "Pizza",
+      "foodCount": 2,
+      "status": "Cooking"
+    },
+    {
+      "id": "3",
+      "customerName": "Charlie",
+      "foodName": "Burger",
+      "foodCount": 1,
+      "status": "Delivering"
+    },
+    {
+      "id": "4",
+      "customerName": "David",
+      "foodName": "Pasta",
+      "foodCount": 3,
+      "status": "Cancelled"
+    },
+    {
+      "id": "5",
+      "customerName": "Eve",
+      "foodName": "Sandwich",
+      "foodCount": 2,
+      "status": "Pending"
+    },
+    {
+      "id": "6",
+      "customerName": "Frank",
+      "foodName": "Taco",
+      "foodCount": 5,
+      "status": "Cooking"
+    },
+    {
+      "id": "7",
+      "customerName": "Grace",
+      "foodName": "Sushi",
+      "foodCount": 4,
+      "status": "Delivering"
+    },
+    {
+      "id": "8",
+      "customerName": "Hannah",
+      "foodName": "Steak",
+      "foodCount": 1,
+      "status": "Completed"
+    },
+    {
+      "id": "9",
+      "customerName": "Ivy",
+      "foodName": "Salmon",
+      "foodCount": 3,
+      "status": "Pending"
+    },
+    {
+      "id": "10",
+      "customerName": "Jack",
+      "foodName": "Ramen",
+      "foodCount": 2,
+      "status": "Cooking"
+    }
+  ]
+}
