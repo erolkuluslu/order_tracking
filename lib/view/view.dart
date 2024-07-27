@@ -4,6 +4,8 @@ import 'package:order_tracking/view_model/view_model.dart';
 import 'package:provider/provider.dart';
 
 class UserScreen extends StatefulWidget {
+  const UserScreen({super.key});
+
   @override
   _UserScreenState createState() => _UserScreenState();
 }
@@ -23,14 +25,14 @@ class _UserScreenState extends State<UserScreen> {
     final userViewModel = Provider.of<UserViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(title: Text('User List')),
+      appBar: AppBar(title: const Text('User List')),
       body: FutureBuilder<void>(
         future: _fetchUsersFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text('Failed to load users'));
+            return const Center(child: Text('Failed to load users'));
           } else {
             return ListView.builder(
               itemCount: userViewModel.users.length,
@@ -47,7 +49,7 @@ class _UserScreenState extends State<UserScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: userViewModel.fetchUsers,
-        child: Icon(Icons.refresh),
+        child: const Icon(Icons.refresh),
       ),
     );
   }

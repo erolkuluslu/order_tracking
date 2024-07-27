@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 
 import '../../model/model.dart';
 import '../../model/order.dart';
-import '../../view/order_tile.dart';
 import 'order_status_dropdown.dart';
 
 class OrderFormContent extends StatelessWidget {
@@ -11,7 +10,8 @@ class OrderFormContent extends StatelessWidget {
   final OrderStatus status;
   final ValueChanged<OrderStatus> onStatusChanged;
 
-  const OrderFormContent({super.key,
+  const OrderFormContent({
+    super.key,
     required this.orderId,
     required this.foodItems,
     required this.status,
@@ -26,9 +26,11 @@ class OrderFormContent extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Text("Ordered food ID is: $orderId"),
-        SizedBox(height: 10),
-        Text("Ordered food items:"),
-        ...foodItems.map((item) => Text('${item.foodCount} x ${item.foodName}')).toList(),
+        const SizedBox(height: 10),
+        const Text("Ordered food items:"),
+        ...foodItems
+            .map((item) => Text('${item.foodCount} x ${item.foodName}'))
+            .toList(),
         OrderStatusDropdown(
           currentStatus: status,
           onStatusChanged: onStatusChanged,

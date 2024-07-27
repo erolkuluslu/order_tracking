@@ -4,7 +4,7 @@ part of '../../view/order_tile.dart';
 class OrderFormDialog extends StatefulWidget {
   final Order order;
 
-  const OrderFormDialog({required this.order});
+  const OrderFormDialog({super.key, required this.order});
 
   @override
   _OrderFormDialogState createState() => _OrderFormDialogState();
@@ -27,7 +27,7 @@ class _OrderFormDialogState extends State<OrderFormDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Edit Order'),
+      title: const Text('Edit Order'),
       content: Form(
         key: _formKey,
         child: OrderFormContent(
@@ -46,7 +46,7 @@ class _OrderFormDialogState extends State<OrderFormDialog> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         TextButton(
           onPressed: () {
@@ -56,7 +56,7 @@ class _OrderFormDialogState extends State<OrderFormDialog> {
               Navigator.of(context).pop();
             }
           },
-          child: Text('Save'),
+          child: const Text('Save'),
         ),
       ],
     );

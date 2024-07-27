@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:order_tracking/bloc/auth_bloc.dart';
+import 'package:order_tracking/view/login_Screen.dart';
 import 'package:order_tracking/view/order_tile.dart';
 import 'package:provider/provider.dart';
 import 'core/widgets/add_order_form_widget.dart';
@@ -10,34 +12,41 @@ void main() {
   runApp(
     ChangeNotifierProvider(
       create: (context) => OrderViewModel(),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: OrderTrackingHome(),
+    return BlocProvider(
+      create: (context) => AuthBloc(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: LoginScreen(),
+      ),
     );
   }
 }
 
 class OrderTrackingHome extends StatelessWidget {
+  const OrderTrackingHome({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Restaurant Order Tracking'),
-
       ),
       body: const OrderList(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddOrderForm(),
+            builder: (context) => const AddOrderForm(),
           );
         },
         child: const Icon(Icons.add),

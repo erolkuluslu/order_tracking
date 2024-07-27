@@ -125,10 +125,6 @@ class RegularUser extends UserBase {
     required String email,
   }) : super(firstName: firstName, lastName: lastName, email: email);
 
-  @override
-  void signOut() {
-    super.signOut();
-  }
 }
 
 // ChatBot class that also uses ElevatedClient mixin
